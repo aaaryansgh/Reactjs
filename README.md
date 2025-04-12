@@ -30,7 +30,7 @@
             - Rating
 
  *  Footer
-       -Copyright
+       - Copyright
        - Links
        - Address
        - Contact
@@ -44,6 +44,9 @@
       ->Named import: import {component1,component2...} from "file path".
 
   # React Hooks
-     -useState() : Super powerful state variable in react
-     -useEffect()
-     -
+     - useState() : Super powerful state variable in react
+     - useEffect()
+     
+  # 2 types of routing in web apps
+      - Client side routing : When there is not a network call. Already we have a pre-written code.
+      - Server side routing : When there is a network call while routing to another route.
