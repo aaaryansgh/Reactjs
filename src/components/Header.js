@@ -1,16 +1,12 @@
 import { useState,useEffect } from "react";
 import { Link } from "react-router";
-import { useLocation } from "react-router";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Header=()=>{
     const [btnName,setBtnName]=useState('login');
-    const location=useLocation();
-    useEffect(()=>{
-        console.log(location);
-    },[location])
-
     const handleLogin=()=>{
         setBtnName(btnName==='login'?'logout':'login');
     }
+    const onlineStatus=useOnlineStatus();
     return (
         <div className="header">
             <div className="Logo-container">
@@ -18,6 +14,7 @@ const Header=()=>{
             </div>
             <div className="nav-items">
                 <ul>
+                  
                     <li>
                         <Link className="link" to="/">Home</Link>
                     </li>
@@ -27,9 +24,13 @@ const Header=()=>{
                     <li>
                         <Link className="link" to="/contact">Contact</Link>
                     </li>
-                    <li>Cart</li>
+                    <li>
+                        <Link className="link" to="/grocery-store">Grocery</Link>
+                    </li>
+                    <li>{onlineStatus?"🟢 Online":"🔴 Offline"}</li>
                     <button className="login-btn" onClick={handleLogin}>{btnName}</button>
                 </ul>
+                
             </div>
         </div>
     )

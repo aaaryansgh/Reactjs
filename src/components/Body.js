@@ -1,7 +1,8 @@
 import ResturantCard from "./ResturantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
-import { Link, useLocation} from "react-router";
+import { Link} from "react-router";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Body=()=>{
     //const filterRestro=[];
     const[restro,setRestro]=useState([]);
@@ -37,8 +38,9 @@ const Body=()=>{
         setFilterRestro(searchedrestro);
     }
     
-    if(restro.length===0){
-        return <Shimmer />
+    const onlineStatus=useOnlineStatus();
+    if(onlineStatus===false){
+        return <h1>Looks like you're Offline. Please check your connection</h1>
     }
     
     return restro.length===0? (
