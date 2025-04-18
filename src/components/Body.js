@@ -1,13 +1,14 @@
-import ResturantCard from "./ResturantCard";
-import { useState, useEffect } from "react";
+import ResturantCard,{withProOffer} from "./ResturantCard";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
-import { Link} from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
+//import UserContext from "../utils/UserContext";
 const Body=()=>{
     //const filterRestro=[];
     const[restro,setRestro]=useState([]);
     const[filterRestro,setFilterRestro]=useState([]);
     const[searchText,setSearchtext]=useState("");
+   
     useEffect(()=>{
         fetchData();
         
@@ -42,21 +43,26 @@ const Body=()=>{
     if(onlineStatus===false){
         return <h1>Looks like you're Offline. Please check your connection</h1>
     }
-    
-    return restro.length===0? (
+    const Prooffercard=withProOffer(ResturantCard);
+    //const data=useContext(UserContext);
+
+    return filterRestro.length===0? (
       <Shimmer />
       ):(
         <div className="body">
-            <div className="filter">
-                <button className="filter-btn" onClick={FilterRestro}>Top Rated Restro</button>
-                <div className="search-container">
-                    <input type="text" className="search-box" onChange={handleSearchChange} value={searchText} />
-                    <button className="search-btn" onClick={searchFilter}>Search</button>
+            <div className="filter flex justify-between items-center p-2 m-2 mx-35">
+                <button className="filter-btn bg-black p-2 rounded-lg cursor-pointer text-white hover:text-amber-600" onClick={FilterRestro}>Top Rated Restro</button>
+                <div className="search-container flex gap-2 ">
+                   
+                    <input type="text" className="search-box border border-solid border-black rounded-xl" onChange={handleSearchChange} value={searchText} />
+                    <button className="search-btn px-3 py-1 bg-black text-white hover:text-amber-600 cursor-pointer rounded-xl" onClick={searchFilter}>Search</button>
                 </div>
             </div>
-            <div className="res-container">
+            <div className="res-container flex flex-wrap justify-center">
                 {filterRestro.map((res)=>(
-                    <Link className="link" to={res.url} key={res.id}><ResturantCard  resData={res} /></Link>
+                    <div key={res.id}>
+                        {res.proOfferText ? <Prooffercard resData={res} /> : <ResturantCard resData={res} />}
+                    </div>
                 ))}
             </div>
         </div>

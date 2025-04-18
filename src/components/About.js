@@ -11,8 +11,7 @@ class About extends React.Component{
             <div>
                 <div>
                 <h1>About Us</h1>
-                <p>This is the about page of our restaurant website.</p>
-                
+                <p>This is the about page of our restaurant website.</p>          
                 <UserClass />
             </div>
             </div>

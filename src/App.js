@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect,useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -7,20 +7,35 @@ import About from "./components/About";
 import Contact from "./components/ContactUs";
 import Error from "./components/Error";
 import Shimmer from "./components/Shimmer";
+import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import Appstore from "./utils/Appstore";
 
-
-//chunking
-// Code Splitting
-// lazy loading
-// Dynamic bundling
-const Grocery=lazy(()=>import("./components/Grocery"));
-//import Grocery from "./components/Grocery";
+// [chunking, code splitting, lazy loading, dynamic bundling]
+const Grocery=lazy(()=>import("./components/Grocery")); //lazy loading
+const Slotmenu=lazy(()=>import("./components/Slotmenu"));
 const AppLayout=()=>{
+     //authentication code written 
+     const [userName,setUserName]=useState();
+
+     useEffect(()=>{
+        const data={
+            name:"Aryan"
+        }
+        setUserName(data.name)
+    },[])
+
+  
+    
     return (
-        <div className="app">
-            <Header />
-            <Outlet />
-        </div>
+        <Provider store={Appstore}>
+            <UserContext.Provider value={{loggedInUser:userName,setUserName}}>
+                <div>
+                    <Header />
+                    <Outlet />
+                </div>
+            </UserContext.Provider>
+        </Provider>  
     )
 }
 
@@ -45,6 +60,10 @@ const appRouter=createBrowserRouter([
                 path:"/contact",
                 element:<Contact />,
             },
+            {
+                path:"/resturant/:resname/:id",
+                element:<Suspense fallback={<Shimmer />}><Slotmenu /></Suspense>
+            }
             
         ],
         errorElement:<Error />,
