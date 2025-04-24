@@ -3,6 +3,8 @@ import { Link } from "react-router";
 
 const ResturantCard=(props)=>{
     const {resData}=props;
+    console.log(resData);
+    
     const {name,imageUrl,subtitleData,rating,proOfferText,id}=resData;
     return (
         <div className="m-4 p-1 w-[300px] h-[420px] bg-black text-white rounded-lg">

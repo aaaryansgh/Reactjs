@@ -1,0 +1,82 @@
+[
+    {
+      "id": "20955949",
+      "type": "restaurant",
+      "name": "Bawri",
+      "url": "https://www.zomato.com/mumbai/bawri-bandra-kurla-complex?zrp_bid=0&zrp_pid=14",
+      "imageUrl": "https://b.zmtcdn.com/data/pictures/9/20955949/591613de413d9629edc4964cd1637ecf.jpg?output-format=webp",
+      "subtitleData": {
+        "cuisines": [
+          {
+            "deeplink": "zomato://search?deeplink_filters=WyJ7XCJjb250ZXh0XCI6XCJhbGxcIn0iLCJ7XCJjdWlzaW5lX2lkXCI6W1wiNTBcIl19Il0%3D",
+            "url": "https://www.zomato.com/mumbai/restaurants/north-indian/",
+            "name": "North Indian"
+          },
+          {
+            "deeplink": "zomato://search?deeplink_filters=WyJ7XCJjb250ZXh0XCI6XCJhbGxcIn0iLCJ7XCJjdWlzaW5lX2lkXCI6W1wiN1wiXX0iXQ%3D%3D",
+            "url": "https://www.zomato.com/mumbai/restaurants/biryani/",
+            "name": "Biryani"
+          },
+          {
+            "deeplink": "zomato://search?deeplink_filters=WyJ7XCJjb250ZXh0XCI6XCJhbGxcIn0iLCJ7XCJjdWlzaW5lX2lkXCI6W1wiNzVcIl19Il0%3D",
+            "url": "https://www.zomato.com/mumbai/restaurants/mughlai/",
+            "name": "Mughlai"
+          }
+        ],
+        "locality": {
+          "text": "Bandra Kurla Complex, Mumbai",
+          "url": "https://www.zomato.com/mumbai/bandra-kurla-complex-restaurants"
+        }
+      },
+      "proOfferText": "",
+      "rating": {
+        "has_fake_reviews": 0,
+        "aggregate_rating": "4.1",
+        "rating_text": "4.1",
+        "rating_subtitle": "Very Good",
+        "rating_color": "5BA829",
+        "votes": "2,062",
+        "subtext": "REVIEWS",
+        "is_new": false
+      },
+      "rating_new": {
+        "newlyOpenedObj": null,
+        "suspiciousReviewObj": null,
+        "ratings": {
+          "DINING": {
+            "rating_type": "DINING",
+            "rating": "4.2",
+            "reviewCount": "2,047",
+            "reviewTextSmall": "2,047 Reviews",
+            "subtext": "2,047 Dining Reviews",
+            "color": "#1C1C1C",
+            "ratingV2": "4.2",
+            "subtitle": "DINING",
+            "sideSubTitle": "Dining Ratings",
+            "bgColorV2": {
+              "type": "green",
+              "tint": "700"
+            },
+            "newOnDining": false
+          },
+          "DELIVERY": {
+            "rating_type": "DELIVERY",
+            "rating": "4.0",
+            "reviewCount": "15",
+            "reviewTextSmall": "15 Reviews",
+            "subtext": "15 Delivery Reviews",
+            "color": "#E23744",
+            "ratingV2": "4.0",
+            "subtitle": "DELIVERY",
+            "sideSubTitle": "Delivery Ratings",
+            "bgColorV2": {
+              "type": "green",
+              "tint": "700"
+            },
+            "newOnDelivery": false
+          }
+        }
+      },
+      "isBookmarked": false,
+      "note": "This restaurant, spread over 4500sqft pictures the perfect mix of pink, gold and green with a botanic decor. Their extensive menu, with their signature Dal Makhani is a must-try!"
+    }]

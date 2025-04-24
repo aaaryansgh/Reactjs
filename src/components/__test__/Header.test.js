@@ -17,16 +17,16 @@ test("Header component Login test",()=>{
     expect(login).toBeInTheDocument();
 })
 
-// test("Header component Login-to-logout test",()=>{
-//     render(
-//         <BrowserRouter>
-//             <Provider store={AppStore}>
-//                 <Header />
-//             </Provider>
-//         </BrowserRouter>
-//     )
-//     const login=screen.getByRole("button",{name:"login"});
-//     fireEvent.click(login);
-//     const logout=screen.getByRole("button",{name:"logout"});
-//     expect(logout).toBeInTheDocument();
-// })
+test("Header component Login-to-logout test",()=>{
+    render(
+        <BrowserRouter>
+            <Provider store={AppStore}>
+                <Header />
+            </Provider>
+        </BrowserRouter>
+    )
+    const login=screen.getByRole("button",{name:"login"});
+    fireEvent.click(login);
+    const logout=screen.getByRole("button",{name:"logout"});
+    expect(logout).toBeInTheDocument();
+})
